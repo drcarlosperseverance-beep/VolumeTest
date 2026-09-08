@@ -26,6 +26,7 @@ public class VolumeAccessibilityService extends AccessibilityService {
         if (card.getParent() == null) { WindowManager.LayoutParams p = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, PixelFormat.TRANSLUCENT); p.gravity = Gravity.CENTER_VERTICAL | Gravity.RIGHT; p.x = 18; wm.addView(card, p); }
         handler.removeCallbacksAndMessages(null); handler.postDelayed(() -> { if (card != null && card.getParent() != null) wm.removeView(card); }, 1300);
     }
+    @Override public void onAccessibilityEvent(android.view.accessibility.AccessibilityEvent event) { }
     @Override public void onInterrupt() { }
     @Override public void onDestroy() { if (card != null && card.getParent() != null) wm.removeView(card); super.onDestroy(); }
 }
