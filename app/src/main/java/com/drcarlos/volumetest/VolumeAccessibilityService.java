@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class VolumeAccessibilityService extends AccessibilityService {
     private WindowManager wm; private TextView card; private final Handler handler = new Handler();
-    @Override protected void onServiceConnected() { super.onServiceConnected(); wm = (WindowManager)getSystemService(WINDOW_SERVICE); }
+    @Override protected void onServiceConnected() { super.onServiceConnected(); wm = (WindowManager)getSystemService(WINDOW_SERVICE); showCard("Servicio activo"); }
     @Override public boolean onKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN && (event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP || event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_DOWN)) {
             showCard(event.getKeyCode() == KeyEvent.KEYCODE_VOLUME_UP ? "Volumen + detectado" : "Volumen − detectado");
