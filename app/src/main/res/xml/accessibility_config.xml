@@ -4,4 +4,4 @@
     android:notificationTimeout="50"
     android:canRetrieveWindowContent="false"
     android:accessibilityFlags="flagRequestFilterKeyEvents"
-    android:description="Detecta los botones de volumen para probar el panel lateral." />
+    android:description="@string/accessibility_description" />
